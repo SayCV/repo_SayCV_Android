@@ -1,3 +1,6 @@
 [submodule "tools-Shuame"]
 	path = tools-Shuame
 	url = https://SayCV@github.com/SayCV/tools-Shuame.git
+[submodule "owncloud_android"]
+	path = owncloud_android
+	url = https://SayCV@github.com/SayCV/owncloud_android.git
