@@ -27,6 +27,8 @@ set /a INSIDE_UTILS_ENV_JAVA=1
 set /a INSIDE_UTILS_ENV_VISUAL_STUDIO=0
 set /a INSIDE_UTILS_ENV_QT=0
 
+set /a SETTINGS_HTTP_PROXY=1
+
 rem set other values to do some user cmds
 set /a EOF_ENV_CMD=0
 set /a EOF_ENV_BASH=1
@@ -142,6 +144,11 @@ call "!VCPath!/bin/vcvars32.bat"
 setlocal disabledelayedexpansion
 )
 
+if %SETTINGS_HTTP_PROXY% ==1 (
+	echo SayCV_MXE: Setting http_proxy on.
+	set http_proxy=http://127.0.0.1:8087/
+	set https_proxy=http://127.0.0.1:8087/
+)
 
 REM ******************************
 REM Start ...
