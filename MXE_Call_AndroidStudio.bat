@@ -180,7 +180,7 @@ echo SayCV_MXE: Add ARDUINO IDE dir to PATH.
 set "ANDROID_STUDIO_HOME1=D:/Program Files (x86)/Android/android-studio"
 set "ANDROID_STUDIO_HOME2=D:/Program Files/Android/android-studio"
 
-echo SayCV_MXE: preinstall some files to build ardupilot Mission Planner.
+echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
 echo SayCV_MXE: Checked Requirements Finished.
