@@ -39,7 +39,7 @@ rem set JAVA SDK values will be used
 set /a USED_JAVA_VER_1D6=0
 set /a USED_JAVA_VER_1D7=1
 set /a USED_JAVA_VER_NONE=3
-set /a USED_JAVA_VER_FLAG=0
+set /a USED_JAVA_VER_FLAG=1
 
 set INSTALL_ENV_DIR_MINGW=D:/MinGW
 set INSTALL_ENV_DIR_CYGWIN=D:/cygwin
@@ -177,7 +177,8 @@ echo SayCV_MXE: Add ARDUINO IDE dir to PATH.
 :::set ARDUINO=%ARDUINO_IDE_DIR%
 :::set PATH=%ARDUINO_IDE_DIR%/bin;%PATH%
 
-set "ANDROID_STUDIO_HOME=D:/Program Files (x86)/Android/android-studio"
+set "ANDROID_STUDIO_HOME1=D:/Program Files (x86)/Android/android-studio"
+set "ANDROID_STUDIO_HOME2=D:/Program Files/Android/android-studio"
 
 echo SayCV_MXE: preinstall some files to build ardupilot Mission Planner.
 echo SayCV_MXE: 
@@ -185,7 +186,14 @@ echo SayCV_MXE:
 echo SayCV_MXE: Checked Requirements Finished.
 
 ::cd %ORIGIN_HOME%/xxx
-"%ANDROID_STUDIO_HOME%/studio.exe"
+
+if not exist "%ANDROID_STUDIO_HOME1%" ( 
+	echo SayCV_MXE: Switch to WINDOWS XP Directoy Style.
+	"%ANDROID_STUDIO_HOME2%/studio.exe"
+) else (
+	echo SayCV_MXE: Switch to WINDOWS 7 Directoy Style.
+	"%ANDROID_STUDIO_HOME1%/studio.exe"
+)
 
 REM ##############################
 REM End ...
@@ -229,7 +237,7 @@ if %EOF_ENV_FLAG% EQU %EOF_ENV_CMD% (
   call :__subCall_ShutDown_EOF__
 :EOF
 	cd %ORIGIN_HOME%
-  :::PAUSE
+  PAUSE
   EXIT
 
 :__subCall_ShutDown_EOF__
