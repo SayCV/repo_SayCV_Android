@@ -4,3 +4,6 @@
 [submodule "owncloud_android"]
 	path = owncloud_android
 	url = https://SayCV@github.com/SayCV/owncloud_android.git
+[submodule "reverse-tether"]
+	path = reverse-tether
+	url = https://SayCV@github.com/SayCV/reverse-tether.git
