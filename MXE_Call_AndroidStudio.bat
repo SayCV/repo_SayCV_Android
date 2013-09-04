@@ -179,6 +179,7 @@ echo SayCV_MXE: Add ARDUINO IDE dir to PATH.
 
 set "ANDROID_STUDIO_HOME1=D:/Program Files (x86)/Android/android-studio"
 set "ANDROID_STUDIO_HOME2=D:/Program Files/Android/android-studio"
+set "ANDROID_STUDIO_HOMEx=%cd%/../repo_SayCV_UTILS/SayCV_Tools_AndroidStudio"
 
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
@@ -186,6 +187,12 @@ echo SayCV_MXE:
 echo SayCV_MXE: Checked Requirements Finished.
 
 ::cd %ORIGIN_HOME%/xxx
+
+if exist "%ANDROID_STUDIO_HOMEx%" ( 
+	echo SayCV_MXE: Start.
+	"%ANDROID_STUDIO_HOMEx%/studio.exe"
+	goto :__subCall_Status_Code__
+)
 
 if not exist "%ANDROID_STUDIO_HOME1%" ( 
 	echo SayCV_MXE: Switch to WINDOWS XP Directoy Style.
