@@ -220,7 +220,7 @@ set "PATH=%ANDROID_PLATFORM_TOOLS_PATH%;%PATH%"
 
 
 adb wait-for-device
-adb reboot bootloader
+adb reboot recovery
 
 REM ##############################
 REM End ...
