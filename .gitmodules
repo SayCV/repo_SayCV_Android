@@ -13,3 +13,6 @@
 [submodule "android-reverse-tethering"]
 	path = android-reverse-tethering
 	url = https://SayCV@bitbucket.org/SayCV/android-reverse-tethering.git
+[submodule "android-wired-tether"]
+	path = android-wired-tether
+	url = https://SayCV@bitbucket.org/SayCV/android-wired-tether.git
