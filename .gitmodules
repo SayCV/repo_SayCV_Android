@@ -10,3 +10,6 @@
 [submodule "SamsungUSBDrivers4Mobile"]
 	path = SamsungUSBDrivers4Mobile
 	url = https://SayCV@github.com/SayCV/SamsungUSBDrivers4Mobile.git
+[submodule "android-reverse-tethering"]
+	path = android-reverse-tethering
+	url = https://SayCV@bitbucket.org/SayCV/android-reverse-tethering.git
