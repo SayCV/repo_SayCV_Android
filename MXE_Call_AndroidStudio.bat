@@ -191,22 +191,22 @@ echo SayCV_MXE: Checked Requirements Finished.
 
 if exist "%ANDROID_STUDIO_HOME3%" ( 
 	echo SayCV_MXE: Start.
-	"%ANDROID_STUDIO_HOME3%/studio.exe"
-	goto :__subCall_Status_Code__
-)
-
-if exist "%ANDROID_STUDIO_HOMEx%" ( 
-	echo SayCV_MXE: Start.
-	"%ANDROID_STUDIO_HOMEx%/studio.exe"
+	"%ANDROID_STUDIO_HOME3%/bin/studio.exe"
 	goto :__subCall_Status_Code__
 )
 
 if not exist "%ANDROID_STUDIO_HOME1%" ( 
 	echo SayCV_MXE: Switch to WINDOWS XP Directoy Style.
-	"%ANDROID_STUDIO_HOME2%/studio.exe"
+	"%ANDROID_STUDIO_HOME2%/bin/studio.exe"
 ) else (
 	echo SayCV_MXE: Switch to WINDOWS 7 Directoy Style.
-	"%ANDROID_STUDIO_HOME1%/studio.exe"
+	"%ANDROID_STUDIO_HOME1%/bin/studio64.exe"
+)
+
+if exist "%ANDROID_STUDIO_HOMEx%" ( 
+	echo SayCV_MXE: Start.
+	"%ANDROID_STUDIO_HOMEx%/bin/studio.exe"
+	goto :__subCall_Status_Code__
 )
 
 REM ##############################
