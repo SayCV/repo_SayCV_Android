@@ -177,10 +177,7 @@ echo SayCV_MXE: Add ARDUINO IDE dir to PATH.
 :::set ARDUINO=%ARDUINO_IDE_DIR%
 :::set PATH=%ARDUINO_IDE_DIR%/bin;%PATH%
 
-set "ANDROID_STUDIO_HOME1=D:/Program Files (x86)/Android/android-studio"
-set "ANDROID_STUDIO_HOME2=D:/Program Files/Android/android-studio"
-set "ANDROID_STUDIO_HOME3=D:/Android/android-studio"
-set "ANDROID_STUDIO_HOMEx=%cd%/../repo_SayCV_UTILS/SayCV_Tools_AndroidStudio"
+set "ANDROID_STUDIO_HOME=D:/Android/android-studio"
 
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
@@ -190,23 +187,17 @@ echo SayCV_MXE: Checked Requirements Finished.
 ::cd %ORIGIN_HOME%/xxx
 set REQUIRED_JVM_ARGS="-Didea.updates.url=http://dl.google.com/android/studio/patches/updates.xml -Didea.patches.url=http://dl.google.com/android/studio/patches/"
 
-if exist "%ANDROID_STUDIO_HOME3%" ( 
-	echo SayCV_MXE: Start.
-	"%ANDROID_STUDIO_HOME3%/bin/studio.exe"
+echo SayCV_MXE: Checked JAVA Version whether supports 32 bit or not?
+java -d32
+if "%errorlevel%"=="0" ( 
+	echo Done Sucessful.
+	echo SayCV_MXE: Start 32bit.
+	"%ANDROID_STUDIO_HOME%/bin/studio.exe"
 	goto :__subCall_Status_Code__
-)
-
-if not exist "%ANDROID_STUDIO_HOME1%" ( 
-	echo SayCV_MXE: Switch to WINDOWS XP Directoy Style.
-	"%ANDROID_STUDIO_HOME2%/bin/studio.exe"
 ) else (
-	echo SayCV_MXE: Switch to WINDOWS 7 Directoy Style.
-	"%ANDROID_STUDIO_HOME1%/bin/studio64.exe"
-)
-
-if exist "%ANDROID_STUDIO_HOMEx%" ( 
-	echo SayCV_MXE: Start.
-	"%ANDROID_STUDIO_HOMEx%/bin/studio.exe"
+    echo Done Failed.
+    echo SayCV_MXE: Start 64bit.
+	"%ANDROID_STUDIO_HOME%/bin/studio64.exe"
 	goto :__subCall_Status_Code__
 )
 
