@@ -188,6 +188,7 @@ echo SayCV_MXE:
 echo SayCV_MXE: Checked Requirements Finished.
 
 ::cd %ORIGIN_HOME%/xxx
+set REQUIRED_JVM_ARGS="-Didea.updates.url=http://dl.google.com/android/studio/patches/updates.xml -Didea.patches.url=http://dl.google.com/android/studio/patches/"
 
 if exist "%ANDROID_STUDIO_HOME3%" ( 
 	echo SayCV_MXE: Start.
