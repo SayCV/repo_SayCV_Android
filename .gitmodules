@@ -16,3 +16,6 @@
 [submodule "android-wired-tether"]
 	path = android-wired-tether
 	url = https://SayCV@bitbucket.org/SayCV/android-wired-tether.git
+[submodule "onekey-decompile-apk"]
+	path = onekey-decompile-apk
+	url = https://SayCV@bitbucket.org/SayCV/onekey-decompile-apk.git
