@@ -187,6 +187,12 @@ echo SayCV_MXE: Checked Requirements Finished.
 ::cd %ORIGIN_HOME%/xxx
 set REQUIRED_JVM_ARGS="-Didea.updates.url=http://dl.google.com/android/studio/patches/updates.xml -Didea.patches.url=http://dl.google.com/android/studio/patches/"
 
+if /i "%PROCESSOR_IDENTIFIER:~0,3%"=="X86" (
+	echo SayCV_MXE: Start 32bit.
+	"%ANDROID_STUDIO_HOME%/bin/studio.exe"
+	goto :__subCall_Status_Code__
+)
+
 echo SayCV_MXE: Checked JAVA Version whether supports 32 bit or not?
 java -d32
 if "%errorlevel%"=="0" ( 
