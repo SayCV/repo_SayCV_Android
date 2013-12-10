@@ -19,3 +19,6 @@
 [submodule "onekey-decompile-apk"]
 	path = onekey-decompile-apk
 	url = https://SayCV@bitbucket.org/SayCV/onekey-decompile-apk.git
+[submodule "Superuser"]
+	path = Superuser
+	url = https://SayCV@github.com/SayCV/Superuser.git
