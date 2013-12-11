@@ -25,3 +25,6 @@
 [submodule "root-commands"]
 	path = root-commands
 	url = https://github.com/SayCV/root-commands.git
+[submodule "microlog4android"]
+	path = microlog4android
+	url = https://github.com/SayCV/microlog4android.git
