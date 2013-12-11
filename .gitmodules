@@ -22,3 +22,6 @@
 [submodule "Superuser"]
 	path = Superuser
 	url = https://SayCV@github.com/SayCV/Superuser.git
+[submodule "root-commands"]
+	path = root-commands
+	url = https://github.com/SayCV/root-commands.git
