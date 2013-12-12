@@ -28,3 +28,6 @@
 [submodule "microlog4android"]
 	path = microlog4android
 	url = https://SayCV@github.com/SayCV/microlog4android.git
+[submodule "slf4j"]
+	path = slf4j
+	url = https://SayCV@github.com/SayCV/slf4j.git
