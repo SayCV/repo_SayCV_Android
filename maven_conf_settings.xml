@@ -167,6 +167,14 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
+    
+    <mirror>
+        <id>nexus-osc</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus osc</name>
+        <url>http://maven.oschina.net/content/groups/public/</url>
+    </mirror>
+
   </mirrors>
   
   <!-- profiles
@@ -261,7 +269,7 @@ under the License.
     <repositories>  
       <repository>  
         <id>release</id>  
-        <url> http://58.20.54.58/content/groups/treleases/</url>  
+        <url>http://58.20.54.58/content/groups/treleases/</url>  
         <releases>  
           <enabled>true</enabled>  
         </releases>  
@@ -272,7 +280,7 @@ under the License.
     </repositories>  
   </profile>  
    
-    <profile>  
+  <profile>  
     <id>TrustieSnapshots</id>  
     <repositories>  
       <repository>  
@@ -288,6 +296,36 @@ under the License.
     </repositories>  
   </profile>
   
+  <profile>  
+    <id>OSChinaDevelopment</id>  
+    <repositories>  
+      <repository>  
+        <id>nexus</id>
+        <name>local private nexus</name>
+        <url>http://maven.oschina.net/content/groups/public/</url>  
+        <releases>  
+          <enabled>true</enabled>  
+        </releases>  
+        <snapshots>  
+          <enabled>false</enabled>  
+        </snapshots>  
+      </repository>  
+    </repositories>
+    <pluginRepositories>  
+      <pluginRepository>  
+        <id>nexus</id>
+        <name>local private nexus</name>
+        <url>http://maven.oschina.net/content/groups/public/</url>  
+        <releases>  
+          <enabled>true</enabled>  
+        </releases>  
+        <snapshots>  
+          <enabled>false</enabled>  
+        </snapshots>  
+      </pluginRepository>  
+    </pluginRepositories>  
+  </profile>
+  
   </profiles>
 
   <!-- activeProfiles
@@ -298,9 +336,13 @@ under the License.
     <activeProfile>anotherAlwaysActiveProfile</activeProfile>
   </activeProfiles>
   -->
+  <!-- activeProfiles
   <activeProfiles>
     <activeProfile>TrustieDevelopment</activeProfile>
     <activeProfile>TrustieSnapshots</activeProfile>
   </activeProfiles>
-  
+  -->
+  <activeProfiles>
+    <activeProfile>OSChinaDevelopment</activeProfile>
+  </activeProfiles>
 </settings>
