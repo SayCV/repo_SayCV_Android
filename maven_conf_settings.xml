@@ -317,7 +317,7 @@ under the License.
         <name>local private nexus</name>
         <url>http://maven.oschina.net/content/groups/public/</url>  
         <releases>  
-          <enabled>true</enabled>  
+          <enabled>false</enabled>  
         </releases>  
         <snapshots>  
           <enabled>false</enabled>  
@@ -342,7 +342,9 @@ under the License.
     <activeProfile>TrustieSnapshots</activeProfile>
   </activeProfiles>
   -->
+  <!-- activeProfiles
   <activeProfiles>
     <activeProfile>OSChinaDevelopment</activeProfile>
   </activeProfiles>
+  -->
 </settings>
