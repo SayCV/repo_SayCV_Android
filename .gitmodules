@@ -31,3 +31,6 @@
 [submodule "slf4j"]
 	path = slf4j
 	url = https://SayCV@github.com/SayCV/slf4j.git
+[submodule "sayJCMs"]
+	path = sayJCMs
+	url = https://SayCV@github.com/SayCV/sayJCMs.git
