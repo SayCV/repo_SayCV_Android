@@ -185,6 +185,10 @@ echo SayCV_MXE: Add Gradle BIN dir to PATH.
 set GRADLE_HOME=D:/Android/gradle
 set PATH=%GRADLE_HOME%/bin;%PATH%
 
+echo SayCV_MXE: Add Maven BIN dir to PATH.
+set M2_HOME=D:/Android/maven/apache-maven-3.1.1
+set PATH=%M2_HOME%/bin;%PATH%
+
 echo SayCV_MXE: Add Android Studio IDE dir to PATH.
 set "ANDROID_STUDIO_HOME=D:/Android/android-studio"
 
