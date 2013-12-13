@@ -21,7 +21,7 @@ rem set other values to included both MinGW and Cygwin Env.
 set /a INSIDE_UTILS_ENV_MINGW=0
 set /a INSIDE_UTILS_ENV_CYGWIN=1
 set /a INSIDE_UTILS_ENV_BOTHALL=2
-set /a INSIDE_UTILS_ENV_FLAG=0
+set /a INSIDE_UTILS_ENV_FLAG=1
 
 set /a INSIDE_UTILS_ENV_JAVA=1
 set /a INSIDE_UTILS_ENV_VISUAL_STUDIO=0
@@ -67,6 +67,8 @@ if %INSIDE_UTILS_ENV_FLAG% EQU %INSIDE_UTILS_ENV_MINGW% (
   )
 )
 SetLocal DisableDelayedExpansion
+echo SayCV_MXE: Add 7z bin dir to PATH.
+set PATH=%PATH%;D:\Program Files\7-Zip
 echo SayCV_MXE: Add git bin dir to PATH.
 set PATH=%PATH%;D:/Program Files (x86)/Git/bin
 set PATH=%PATH%;D:/Program Files/Git/bin
@@ -187,6 +189,7 @@ set GRADLE_HOME=D:/Android/gradle
 set PATH=%GRADLE_HOME%/bin;%PATH%
 
 echo SayCV_MXE: Add Maven BIN dir to PATH.
+set MAVEN_HOME=D:/Android/maven
 set M2_HOME=D:/Android/maven/apache-maven-3.1.1
 set PATH=%M2_HOME%/bin;%PATH%
 
@@ -210,25 +213,14 @@ echo SayCV_MXE: Checked Requirements Finished.
 ::cd %ORIGIN_HOME%/xxx
 set REQUIRED_JVM_ARGS="-Didea.updates.url=http://dl.google.com/android/studio/patches/updates.xml -Didea.patches.url=http://dl.google.com/android/studio/patches/"
 
-if /i "%PROCESSOR_IDENTIFIER:~0,3%"=="X86" (
-	echo SayCV_MXE: Start 32bit.
-	"%ANDROID_STUDIO_HOME%/bin/studio.exe"
-	goto :__subCall_Status_Code__
-)
-
-echo SayCV_MXE: Checked JAVA Version whether supports 32 bit or not?
-java -d32
-if "%errorlevel%"=="0" ( 
-	echo Done Sucessful.
-	echo SayCV_MXE: Start 32bit.
-	"%ANDROID_STUDIO_HOME%/bin/studio.exe"
-	goto :__subCall_Status_Code__
-) else (
-    echo Done Failed.
-    echo SayCV_MXE: Start 64bit.
-	"%ANDROID_STUDIO_HOME%/bin/studio64.exe"
-	goto :__subCall_Status_Code__
-)
+:::echo SayCV_MXE: Add sayCSSs HOME to PATH.
+:::cd ../repo_SayCV_UTILS/sayCSSs
+:::set SAYCSSS_HOME=%cd%
+:::set PATH=%PATH%;%SAYCSSS_HOME%/common
+:::cd %ORIGIN_HOME%
+:::tar -zcvf maven_repo.tar.gz D:/Android/maven/repo/*
+:::bash --login -i
+bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/maven/pack_customized_repo.sh"
 
 REM ##############################
 REM End ...
