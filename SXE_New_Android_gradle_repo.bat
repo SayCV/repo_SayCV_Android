@@ -67,6 +67,8 @@ if %INSIDE_UTILS_ENV_FLAG% EQU %INSIDE_UTILS_ENV_MINGW% (
   )
 )
 SetLocal DisableDelayedExpansion
+echo SayCV_MXE: Add 7z bin dir to PATH.
+set PATH=%PATH%;D:\Program Files\7-Zip
 echo SayCV_MXE: Add git bin dir to PATH.
 set PATH=%PATH%;D:/Program Files (x86)/Git/bin
 set PATH=%PATH%;D:/Program Files/Git/bin
@@ -206,6 +208,9 @@ echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
 echo SayCV_MXE: Checked Requirements Finished.
+
+bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/gradle_new_project.sh"
+pause
 
 ::cd %ORIGIN_HOME%/xxx
 set REQUIRED_JVM_ARGS="-Didea.updates.url=http://dl.google.com/android/studio/patches/updates.xml -Didea.patches.url=http://dl.google.com/android/studio/patches/"
