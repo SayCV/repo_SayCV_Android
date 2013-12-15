@@ -167,13 +167,13 @@ under the License.
       <url>http://my.repository.com/repo/path</url>
     </mirror>
      -->
-    
+    <!--
     <mirror>
         <id>nexus-osc</id>
         <mirrorOf>*</mirrorOf>
         <name>Nexus osc</name>
         <url>http://maven.oschina.net/content/groups/public/</url>
-    </mirror>
+    </mirror>-->
 
   </mirrors>
   
