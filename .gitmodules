@@ -40,3 +40,6 @@
 [submodule "logback-android"]
 	path = logback-android
 	url = https://SayCV@github.com/SayCV/logback-android.git
+[submodule "DevsmartLib-Android"]
+	path = DevsmartLib-Android
+	url = https://SayCV@github.com/SayCV/DevsmartLib-Android.git
