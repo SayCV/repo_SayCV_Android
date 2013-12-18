@@ -43,3 +43,6 @@
 [submodule "DevsmartLib-Android"]
 	path = DevsmartLib-Android
 	url = https://SayCV@github.com/SayCV/DevsmartLib-Android.git
+[submodule "imsdroid"]
+	path = imsdroid
+	url = https://SayCV@github.com/SayCV/imsdroid.git
