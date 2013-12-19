@@ -43,3 +43,6 @@
 [submodule "imsdroid"]
 	path = imsdroid
 	url = https://SayCV@github.com/SayCV/imsdroid.git
+[submodule "SayRevTethering"]
+	path = SayRevTethering
+	url = https://SayCV@github.com/SayCV/SayRevTethering.git
