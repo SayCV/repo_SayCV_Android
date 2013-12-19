@@ -46,3 +46,6 @@
 [submodule "SayRevTethering"]
 	path = SayRevTethering
 	url = https://SayCV@github.com/SayCV/SayRevTethering.git
+[submodule "doubango"]
+	path = doubango
+	url = https://SayCV@github.com/SayCV/doubango.git
