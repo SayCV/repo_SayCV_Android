@@ -34,9 +34,6 @@
 [submodule "sayJCMs"]
 	path = sayJCMs
 	url = https://SayCV@github.com/SayCV/sayJCMs.git
-[submodule "SayRevTethering"]
-	path = SayRevTethering
-	url = https://SayCV@github.com/SayCV/SayRevTethering.git
 [submodule "logback-android"]
 	path = logback-android
 	url = https://SayCV@github.com/SayCV/logback-android.git
