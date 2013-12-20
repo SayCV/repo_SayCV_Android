@@ -187,7 +187,7 @@ set GRADLE_HOME=D:/Android/gradle
 set PATH=%GRADLE_HOME%/bin;%PATH%
 
 echo SayCV_MXE: Add Maven BIN dir to PATH.
-set M2_HOME=D:/Android/maven/apache-maven-3.1.1
+set M2_HOME=D:/Android/maven/apache-maven
 set PATH=%M2_HOME%/bin;%PATH%
 
 echo SayCV_MXE: Settings Customized android libs.
