@@ -219,7 +219,7 @@ set ANDROID_PLATFORM_TOOLS_PATH=D:/Android/android-studio/sdk/platform-tools
 set "PATH=%ANDROID_PLATFORM_TOOLS_PATH%;%PATH%"
 :::echo %PATH%
 
-
+adb wait-for-device
 adb shell
 
 REM ##############################
