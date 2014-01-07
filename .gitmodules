@@ -49,3 +49,6 @@
 [submodule "doubango"]
 	path = doubango
 	url = https://SayCV@github.com/SayCV/doubango.git
+[submodule "saySgs"]
+	path = saySgs
+	url = https://SayCV@github.com/SayCV/saySgs.git
