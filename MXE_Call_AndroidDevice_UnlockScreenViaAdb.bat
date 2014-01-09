@@ -37,8 +37,9 @@ set /a SETTINGS_HTTP_PROXY=1
 rem set other values to do some user cmds
 set /a EOF_ENV_CMD=0
 set /a EOF_ENV_BASH=1
+set /a EOF_ENV_EOF_WITHOUT_PAUSE=2
 set /a EOF_ENV_EOF=3
-set /a EOF_ENV_FLAG=3
+set /a EOF_ENV_FLAG=2
 
 rem set JAVA SDK values will be used
 set /a USED_JAVA_VER_1D6=0
@@ -264,7 +265,9 @@ if %EOF_ENV_FLAG% EQU %EOF_ENV_CMD% (
   call :__subCall_ShutDown_EOF__
 :EOF
 	cd %ORIGIN_HOME%
-  PAUSE
+	if %EOF_ENV_FLAG% EQU %EOF_ENV_EOF% (
+  	PAUSE
+  )
   EXIT
 
 :__subCall_ShutDown_EOF__
