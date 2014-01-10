@@ -52,3 +52,6 @@
 [submodule "saySgs"]
 	path = saySgs
 	url = https://SayCV@github.com/SayCV/saySgs.git
+[submodule "mirakel-android"]
+	path = mirakel-android
+	url = https://SayCV@github.com/SayCV/mirakel-android.git
