@@ -55,3 +55,9 @@
 [submodule "mirakel-android"]
 	path = mirakel-android
 	url = https://SayCV@github.com/SayCV/mirakel-android.git
+[submodule "SigarDroid"]
+	path = SigarDroid
+	url = https://SayCV@github.com/SayCV/SigarDroid.git
+[submodule "android-sasl"]
+	path = android-sasl
+	url = https://SayCV@github.com/SayCV/android-sasl.git
