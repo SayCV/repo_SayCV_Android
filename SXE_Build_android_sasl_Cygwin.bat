@@ -216,7 +216,7 @@ if not exist stamp_configure_h (
 )
 
 if not exist stamp_make_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && make >%HOME%/log-SXE_Build_android_sasl_Cygwin_make.log 2>&1 && touch stamp_make_h"
+	bash --login -i -c "cd android-sasl/classpath-0.98 && make >../../log-SXE_Build_android_sasl_Cygwin_make.log 2>&1 && touch stamp_make_h"
 )
 
 rem cd bindings\java
