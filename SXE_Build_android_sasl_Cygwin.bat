@@ -205,18 +205,18 @@ rem set NDK=D:/Android/android-ndk-r9b
 rem set NDK_PREBUILT_HOME=%NDK%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
 rem set PATH=%NDK_PREBUILT_HOME%/bin;%PATH%
 
-set NDK_ROOT=D:/Android/android-ndk-r9b
-set NDK_TOOLCHAINS_ROOT=%NDK_ROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
-set NDK_TOOLCHAINS_PREFIX=%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi
-set NDK_TOOLCHAINS_INCLUDE=%NDK_TOOLCHAINS_ROOT%/lib/gcc/arm-linux-androideabi/4.8/include-fixed
-set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
+rem set NDK_ROOT=D:/Android/android-ndk-r9b
+rem set NDK_TOOLCHAINS_ROOT=%NDK_ROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
+rem set NDK_TOOLCHAINS_PREFIX=%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi
+rem set NDK_TOOLCHAINS_INCLUDE=%NDK_TOOLCHAINS_ROOT%/lib/gcc/arm-linux-androideabi/4.8/include-fixed
+rem set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
 
-set NDK_PLATFORM_ROOT=%NDK_ROOT%/platforms/android-18/arch-arm
-set NDK_PLATFORM_INCLUDE=%NDK_PLATFORM_ROOT%/usr/include
-set NDK_PLATFORM_LIB=%NDK_PLATFORM_ROOT%/usr/lib
+rem set NDK_PLATFORM_ROOT=%NDK_ROOT%/platforms/android-18/arch-arm
+rem set NDK_PLATFORM_INCLUDE=%NDK_PLATFORM_ROOT%/usr/include
+rem set NDK_PLATFORM_LIB=%NDK_PLATFORM_ROOT%/usr/lib
 
-set SYSROOT=%NDK_PLATFORM_ROOT%
-set CC="%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi-gcc --sysroot=%SYSROOT%"
+rem set SYSROOT=%NDK_PLATFORM_ROOT%
+rem set CC="$(cygpath -u '%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi-gcc') --sysroot=$(cygpath -u '%SYSROOT%')"
 
 rem FLAGS=-I$(TOOLCHAINS_INCLUDE) \  
 rem -I$(PLATFORM_INCLUDE) \  
@@ -231,22 +231,7 @@ echo SayCV_MXE:
 
 echo SayCV_MXE: Checked Requirements Finished.
 
-cd android-sasl/classpath-0.98
-
-if not exist stamp_autogen_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./autogen.sh && touch stamp_autogen_h"
-)
-
-if not exist stamp_configure_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --prefix=/tmp/classpath --disable-gtk-peer --disable-gconf-peer --disable-plugin --with-ecj --host=arm-linux-androideabi && touch stamp_configure_h"
-)
-
-if not exist stamp_make_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && make >../../log-SXE_Build_android_sasl_Cygwin_make.log 2>&1 && touch stamp_make_h"
-)
-
-rem cd bindings\java
-rem ant >%HOME%/log-SXE_Build_SIGAR_Cygwin_ant.log 2>&1
+bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log"
 
 REM ##############################
 REM End ...
