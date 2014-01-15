@@ -229,6 +229,10 @@ rem -lc
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
+echo SayCV_MXE: Settings boolean_skip_checking_stamp_h to enable skip some steps.
+set boolean_skip_checking_stamp_h=0
+set boolean_skip_checking_stamp_h=1
+
 echo SayCV_MXE: Checked Requirements Finished.
 
 bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log"
