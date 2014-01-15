@@ -235,7 +235,7 @@ rem 	bash --login -i -c "cd android-sasl/classpath-0.98 && ./autogen.sh && touch
 rem )
 
 if not exist stamp_configure_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --prefix=/tmp/classpath --disable-gtk-peer --disable-gconf-peer --disable-plugin --with-ecj --host=arm-linux-androideabi --sys_root=$(cygpath -u '%NDK_PLATFORM_ROOT%') && touch stamp_configure_h"
+	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --prefix=/tmp/classpath --disable-gtk-peer --disable-gconf-peer --disable-plugin --with-ecj --host=arm-linux-androideabi --sys-root=$(cygpath -u '%NDK_PLATFORM_ROOT%') && touch stamp_configure_h"
 )
 
 if not exist stamp_make_h (
