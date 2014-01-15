@@ -200,6 +200,11 @@ set SAY_JCMS_HOME=%cd%/sayJCMs
 echo SayCV_MXE: Add Android Studio IDE dir to PATH.
 set "ANDROID_STUDIO_HOME=D:/Android/android-studio"
 
+echo SayCV_MXE: Add Android NDK dir to PATH.
+set NDK=D:/Android/android-ndk-r9b
+set NDK_PREBUILT_HOME=%NDK%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
+set PATH=%NDK_PREBUILT_HOME%/bin;%PATH%
+
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
@@ -212,7 +217,7 @@ rem 	bash --login -i -c "cd android-sasl/classpath-0.98 && ./autogen.sh && touch
 rem )
 
 if not exist stamp_configure_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --disable-dssi --disable-gtk-peer --enable-qt-peer --enable-gmp --disable-gjdoc --disable-plugin && touch stamp_configure_h"
+	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --prefix=/tmp/classpath --disable-gtk-peer --disable-gconf-peer --disable-plugin --with-ecj --host=arm-linux-androideabi && touch stamp_configure_h"
 )
 
 if not exist stamp_make_h (
