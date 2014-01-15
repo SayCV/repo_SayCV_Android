@@ -133,15 +133,11 @@ setlocal enabledelayedexpansion
 echo SayCV_MXE: Set VCPath and SDKPath.
 set      "VCROOT=D:/Program Files (x86)/Microsoft Visual Studio 11.0"
 set "VC_IDE_PATH=!VCROOT!/Common7/IDE"
-set "VC_BIN_PATH=!VCROOT!/VC/bin"
 set      "VCPath=!VCROOT!/VC"
 set     "SDKPath=D:/Program Files (x86)/Microsoft SDKs/Windows/v7.1"
 
 echo SayCV_MXE: Add Microsoft Visual Studio IDE dir to PATH.
 set "PATH=!PATH!;!VC_IDE_PATH!"
-
-echo SayCV_MXE: Add Microsoft Visual Studio VC bin to PATH.
-set "PATH=!PATH!;!VC_BIN_PATH!"
 
 echo SayCV_MXE: Call vcvars32.bat.
 call "!VCPath!/bin/vcvars32.bat"
@@ -200,53 +196,12 @@ set SAY_JCMS_HOME=%cd%/sayJCMs
 echo SayCV_MXE: Add Android Studio IDE dir to PATH.
 set "ANDROID_STUDIO_HOME=D:/Android/android-studio"
 
-echo SayCV_MXE: Add Android NDK dir to PATH.
-rem set NDK=D:/Android/android-ndk-r9b
-rem set NDK_PREBUILT_HOME=%NDK%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
-rem set PATH=%NDK_PREBUILT_HOME%/bin;%PATH%
-
-set NDK_ROOT=D:/Android/android-ndk-r9b
-set NDK_TOOLCHAINS_ROOT=%NDK_ROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
-set NDK_TOOLCHAINS_PREFIX=%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi
-set NDK_TOOLCHAINS_INCLUDE=%NDK_TOOLCHAINS_ROOT%/lib/gcc/arm-linux-androideabi/4.8/include-fixed
-set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
-
-set NDK_PLATFORM_ROOT=%NDK_ROOT%/platforms/android-18/arch-arm
-set NDK_PLATFORM_INCLUDE=%NDK_PLATFORM_ROOT%/usr/include
-set NDK_PLATFORM_LIB=%NDK_PLATFORM_ROOT%/usr/lib
-
-set SYSROOT=%NDK_PLATFORM_ROOT%
-set CC="%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi-gcc --sysroot=%SYSROOT%"
-
-rem FLAGS=-I$(TOOLCHAINS_INCLUDE) \  
-rem -I$(PLATFORM_INCLUDE) \  
-rem -L$(PLATFORM_LIB) \  
-rem -nostdlib \  
-rem -lgcc \  
-rem -Bdynamic \  
-rem -lc  
-
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
 echo SayCV_MXE: Checked Requirements Finished.
 
-cd android-sasl/classpath-0.98
-
-if not exist stamp_autogen_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./autogen.sh && touch stamp_autogen_h"
-)
-
-if not exist stamp_configure_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && ./configure --prefix=/tmp/classpath --disable-gtk-peer --disable-gconf-peer --disable-plugin --with-ecj --host=arm-linux-androideabi && touch stamp_configure_h"
-)
-
-if not exist stamp_make_h (
-	bash --login -i -c "cd android-sasl/classpath-0.98 && make >../../log-SXE_Build_android_sasl_Cygwin_make.log 2>&1 && touch stamp_make_h"
-)
-
-rem cd bindings\java
-rem ant >%HOME%/log-SXE_Build_SIGAR_Cygwin_ant.log 2>&1
+cmd
 
 REM ##############################
 REM End ...
