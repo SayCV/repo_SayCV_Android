@@ -21,7 +21,7 @@ rem set other values to included both MinGW and Cygwin Env.
 set /a INSIDE_UTILS_ENV_MINGW=0
 set /a INSIDE_UTILS_ENV_CYGWIN=1
 set /a INSIDE_UTILS_ENV_BOTHALL=2
-set /a INSIDE_UTILS_ENV_FLAG=1
+set /a INSIDE_UTILS_ENV_FLAG=0
 
 set /a INSIDE_UTILS_ENV_JAVA=1
 set /a INSIDE_UTILS_ENV_VISUAL_STUDIO=0
@@ -205,11 +205,11 @@ rem set NDK=D:/Android/android-ndk-r9b
 rem set NDK_PREBUILT_HOME=%NDK%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
 rem set PATH=%NDK_PREBUILT_HOME%/bin;%PATH%
 
-rem set NDK_ROOT=D:/Android/android-ndk-r9b
-rem set NDK_TOOLCHAINS_ROOT=%NDK_ROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
+set NDK_ROOT=D:/Android/android-ndk-r9b
+set NDK_TOOLCHAINS_ROOT=%NDK_ROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
 rem set NDK_TOOLCHAINS_PREFIX=%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi
 rem set NDK_TOOLCHAINS_INCLUDE=%NDK_TOOLCHAINS_ROOT%/lib/gcc/arm-linux-androideabi/4.8/include-fixed
-rem set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
+set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
 
 rem set NDK_PLATFORM_ROOT=%NDK_ROOT%/platforms/android-18/arch-arm
 rem set NDK_PLATFORM_INCLUDE=%NDK_PLATFORM_ROOT%/usr/include
