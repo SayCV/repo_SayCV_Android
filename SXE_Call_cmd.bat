@@ -85,13 +85,13 @@ set JAVA_INSTALL_DIR=D:/cygwin/opt/Java
 if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D6%' (
 	set "JAVA_HOME=!JAVA_INSTALL_DIR!/jdk6"
 	set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre6
-	set  "CLASSPATH=!JAVA_HOME!/lib:!JRE_HOME!/lib
+	set  "CLASSPATH=!JAVA_HOME!/lib;!JRE_HOME!/lib
 	echo SayCV_MXE: Set JAVA_HOME Env to 1.6.
 ) else (
 	if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D7%' (
 		set "JAVA_HOME=!JAVA_INSTALL_DIR!/jdk7"
 		set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre7
-		set  "CLASSPATH=!JAVA_HOME!/lib:!JRE_HOME!/lib
+		set  "CLASSPATH=!JAVA_HOME!/lib;!JRE_HOME!/lib
 		echo SayCV_MXE: Set JAVA_HOME Env to 1.7.
 	) else (
 		echo SayCV_MXE: Do NOT Needed Set JAVA_HOME Env.
