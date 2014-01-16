@@ -196,11 +196,29 @@ set SAY_JCMS_HOME=%cd%/sayJCMs
 echo SayCV_MXE: Add Android Studio IDE dir to PATH.
 set "ANDROID_STUDIO_HOME=D:/Android/android-studio"
 
+echo SayCV_MXE: Add Android NDK dir to PATH.
+rem set NDK=D:/Android/android-ndk-r9b
+rem set NDK_PREBUILT_HOME=%NDK%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
+rem set PATH=%NDK_PREBUILT_HOME%/bin;%PATH%
+
+set NDKROOT=D:/Android/android-ndk-r9b
+set NDK_TOOLCHAINS_ROOT=%NDKROOT%/toolchains/arm-linux-androideabi-4.8/prebuilt/windows
+set NDK_TOOLCHAINS_PREFIX=%NDK_TOOLCHAINS_ROOT%/bin/arm-linux-androideabi
+set NDK_TOOLCHAINS_INCLUDE=%NDK_TOOLCHAINS_ROOT%/lib/gcc/arm-linux-androideabi/4.8/include-fixed
+set PATH=%NDK_TOOLCHAINS_ROOT%/bin;%PATH%
+
+set NDK_PLATFORM_ROOT=%NDK_ROOT%/platforms/android-18/arch-arm
+set NDK_PLATFORM_INCLUDE=%NDK_PLATFORM_ROOT%/usr/include
+set NDK_PLATFORM_LIB=%NDK_PLATFORM_ROOT%/usr/lib
+
+set SYSROOT=%NDK_PLATFORM_ROOT%
+
 echo SayCV_MXE: preinstall some files to build.
 echo SayCV_MXE: 
 
 echo SayCV_MXE: Checked Requirements Finished.
 
+arm-linux-androideabi-gcc -c -nostdlib -I/cygdrive/d/Android/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/include-fixed -I/cygdrive/d/Android/android-ndk-r9b/platforms/android-18/arch-arm/usr/include  conftest.c
 cmd
 
 REM ##############################
