@@ -97,8 +97,15 @@ if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D6%' (
 		echo SayCV_MXE: Do NOT Needed Set JAVA_HOME Env.
 	)
 )
+
+echo SayCV_MXE: Add JAVA bin dir to PATH.
+set PATH=!JAVA_HOME!/bin;!PATH!;
+
 if not exist "!JAVA_HOME!" (
 	echo SayCV_MXE: But directory of JAVA_HOME NOT Exist.
+	set PATH=!JAVA_HOME!/jre/bin;!PATH!;
+) else (
+	set PATH=!JRE_HOME!/bin;!PATH!;
 )
 SetLocal DisableDelayedExpansion
 )
