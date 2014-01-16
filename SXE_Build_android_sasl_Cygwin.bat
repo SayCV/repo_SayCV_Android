@@ -84,13 +84,13 @@ echo SayCV_MXE: Set JAVA_HOME Env.
 set JAVA_INSTALL_DIR=D:/cygwin/opt/Java
 if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D6%' (
 	set "JAVA_HOME=!JAVA_INSTALL_DIR!/jdk6"
-	rem set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre6
+	set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre6
 	set  "CLASSPATH=!JAVA_HOME!/lib:!JRE_HOME!/lib
 	echo SayCV_MXE: Set JAVA_HOME Env to 1.6.
 ) else (
 	if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D7%' (
 		set "JAVA_HOME=!JAVA_INSTALL_DIR!/jdk7"
-		rem set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre7
+		set  "JRE_HOME=!JAVA_INSTALL_DIR!/jre7
 		set  "CLASSPATH=!JAVA_HOME!/lib:!JRE_HOME!/lib
 		echo SayCV_MXE: Set JAVA_HOME Env to 1.7.
 	) else (
@@ -101,8 +101,8 @@ if '%USED_JAVA_VER_FLAG%'=='%USED_JAVA_VER_1D6%' (
 echo SayCV_MXE: Add JAVA bin dir to PATH.
 set PATH=!JAVA_HOME!/bin;!PATH!;
 
-if not exist "!JAVA_HOME!" (
-	echo SayCV_MXE: But directory of JAVA_HOME NOT Exist.
+if not exist "!JRE_HOME!" (
+	echo SayCV_MXE: But directory of JRE_HOME NOT Exist.
 	set PATH=!JAVA_HOME!/jre/bin;!PATH!;
 ) else (
 	set PATH=!JRE_HOME!/bin;!PATH!;
