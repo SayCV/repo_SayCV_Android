@@ -242,7 +242,7 @@ set boolean_skip_checking_stamp_h=1
 
 echo SayCV_MXE: Checked Requirements Finished.
 
-bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log"
+bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log 2>&1"
 
 REM ##############################
 REM End ...
