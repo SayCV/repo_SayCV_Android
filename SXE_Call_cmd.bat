@@ -225,6 +225,7 @@ echo SayCV_MXE:
 
 echo SayCV_MXE: Checked Requirements Finished.
 
+rem java -jar $(echo "D:\cygwin\usr\share\java\ecj.jar" | sed -e 's@\\@/@g') -Xlint:unchecked,cast,divzero,empty,finally,overrides -source 1.5 -target 1.5 Object.java
 arm-linux-androideabi-gcc -c -nostdlib -I/cygdrive/d/Android/android-ndk-r9b/toolchains/arm-linux-androideabi-4.8/prebuilt/windows/lib/gcc/arm-linux-androideabi/4.8/include-fixed -I/cygdrive/d/Android/android-ndk-r9b/platforms/android-18/arch-arm/usr/include  conftest.c
 cmd
 
