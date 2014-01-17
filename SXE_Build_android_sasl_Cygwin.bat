@@ -27,7 +27,7 @@ set /a INSIDE_UTILS_ENV_JAVA=1
 set /a INSIDE_UTILS_ENV_VISUAL_STUDIO=0
 set /a INSIDE_UTILS_ENV_QT=0
 
-set /a SETTINGS_HTTP_PROXY=1
+set /a SETTINGS_HTTP_PROXY=0
 
 rem set other values to do some user cmds
 set /a EOF_ENV_CMD=0
