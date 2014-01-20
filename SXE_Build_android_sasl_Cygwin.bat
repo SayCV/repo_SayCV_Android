@@ -27,7 +27,7 @@ set /a INSIDE_UTILS_ENV_JAVA=1
 set /a INSIDE_UTILS_ENV_VISUAL_STUDIO=0
 set /a INSIDE_UTILS_ENV_QT=0
 
-set /a SETTINGS_HTTP_PROXY=1
+set /a SETTINGS_HTTP_PROXY=0
 
 rem set other values to do some user cmds
 set /a EOF_ENV_CMD=0
@@ -242,7 +242,8 @@ set boolean_skip_checking_stamp_h=1
 
 echo SayCV_MXE: Checked Requirements Finished.
 
-bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log 2>&1"
+bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh"
+rem bash --login -i -c "../repo_SayCV_UTILS/sayCSSs/android/build_android_sasl_gnu_classpath.sh >log-build_android_sasl_gnu_classpath.log 2>&1"
 
 REM ##############################
 REM End ...
