@@ -61,3 +61,6 @@
 [submodule "android-sasl"]
 	path = android-sasl
 	url = https://SayCV@github.com/SayCV/android-sasl.git
+[submodule "SGit"]
+	path = SGit
+	url = https://SayCV@github.com/SayCV/SGit.git
