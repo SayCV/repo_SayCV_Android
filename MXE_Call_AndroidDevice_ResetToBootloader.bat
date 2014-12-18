@@ -214,13 +214,14 @@ echo SayCV_MXE:
 echo SayCV_MXE: Ready to do main work.
 
 echo SayCV_MXE: Config Android Platform-tools PATH.
-set ANDROID_PLATFORM_TOOLS_PATH=%HOME%/tools-Shuame
+set ANDROID_PLATFORM_TOOLS_PATH=D:\Android\android-sdk\platform-tools
 set "PATH=%ANDROID_PLATFORM_TOOLS_PATH%;%PATH%"
 :::echo %PATH%
 
-
 adb wait-for-device
 adb reboot bootloader
+
+cmd
 
 REM ##############################
 REM End ...
